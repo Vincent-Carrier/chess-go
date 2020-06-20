@@ -1,9 +1,10 @@
 package main
 
-type Kind int
+type PieceKind int
 
+//go:generate stringer -type=PieceKind
 const (
-	Empty Kind = iota
+	Empty PieceKind = iota
 	Pawn
 	Knight
 	Bishop
@@ -13,6 +14,6 @@ const (
 )
 
 type Piece struct {
-	Kind  Kind
+	Kind  PieceKind
 	Color Color
 }

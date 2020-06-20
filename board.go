@@ -15,8 +15,10 @@ func (b *Board) AtCoord(s string) (Piece, Sq) {
 	return b.At(sq), sq
 }
 
-func (b *Board) Set(sq Sq, p Piece) {
+func (b *Board) Set(sq Sq, p Piece) Piece {
+	old := b.At(sq)
 	b[sq.Y][sq.X] = p
+	return old
 }
 
 var InitialBoard string = strings.TrimSpace(`

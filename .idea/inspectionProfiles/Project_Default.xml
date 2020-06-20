@@ -11,6 +11,8 @@
         <function importPath="fmt" name="Fprintf" />
         <function importPath="fmt" name="Fscanln" />
         <function importPath="fmt" name="Fscanf" />
+        <function importPath="fmt" name="Scanf" />
+        <function importPath="fmt" name="Scan" />
       </functions>
     </inspection_tool>
   </profile>

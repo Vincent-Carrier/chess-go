@@ -25,17 +25,16 @@ func (p Piece) SlideOne(from Sq, towards Vec, b *Board) (Sq, bool) {
 }
 
 func (p Piece) Slide(from Sq, towards Vec, b *Board) (sqs Squares) {
-	for {
-		if sq, ok := p.SlideOne(from, towards, b); ok {
-			sqs = append(sqs, sq)
-			if p.Color == b.At(sq).Color.Opposite() {
-				return
-			}
-			from = sq
-		} else {
+start:
+	if sq, ok := p.SlideOne(from, towards, b); ok {
+		sqs = append(sqs, sq)
+		if p.Color == b.At(sq).Color.Opposite() {
 			return
 		}
+		from = sq
+		goto start
 	}
+	return
 }
 
 func (p Piece) shortMoves(from Sq, b *Board, cardinals ...Vec) (moves Squares) {

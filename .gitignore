@@ -91,3 +91,4 @@ fabric.properties
 
 src/
 
+*_string.go

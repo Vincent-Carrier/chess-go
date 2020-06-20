@@ -1,5 +1,6 @@
 package main
 
+//go:generate stringer -type=MoveKind
 type MoveKind int
 
 const (
@@ -10,7 +11,7 @@ type Move struct {
 	Kind MoveKind
 	From Sq
 	To Sq
-	Capture
+	Capture *Capture
 }
 
 type Capture struct {
